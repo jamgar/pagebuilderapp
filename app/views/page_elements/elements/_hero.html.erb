@@ -1,0 +1,11 @@
+<div id=<%= "hero-#{dom_id(page_element)}" %> style="<%= hero_styles(page_element.properties) %>">
+  <hgroup>
+    <h1 class="is-size-1"><%= page_element.properties["hero_h1"].present? ? page_element.properties["hero_h1"] : "Hero Title" %></h1>
+    <h3 class="is-size-3"><%= page_element.properties["hero_subtitle"].present? ? page_element.properties["hero_subtitle"] : "Hero Subtitle" %></h3>
+  </hgroup>
+  <% if page_element.properties["cta_url"].present? %>
+    <div style="text-align: center;">
+      <a href="<%= page_element.properties["cta_url"] %>" class="button is-outlined">Go to</a>
+    </div>
+  <% end %>
+</div>

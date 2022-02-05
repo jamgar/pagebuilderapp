@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Element:</strong>
+  <%= @element_property.element_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @element_property.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @element_property.type %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @element_property.value %>
+</p>
+
+<%= link_to 'Edit', edit_element_property_path(@element_property) %> |
+<%= link_to 'Back', element_properties_path %>

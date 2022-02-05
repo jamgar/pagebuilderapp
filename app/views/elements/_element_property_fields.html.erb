@@ -1,0 +1,29 @@
+<div class="nested-fields">
+  <%= f.hidden_field :_destroy %>
+  <div class="field">
+    <%= f.label :name, class: 'label' %>
+    <div class="control">
+        <%= f.text_field :name, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :input_type, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :input_type, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :value, class: 'label' %>
+    <div class="control">
+      <%= f.text_field :value, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= link_to "Remove", '#', class: "remove_fields" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+document.querySelector("#page-element-content").insertAdjacentHTML("beforeend", "<%= j render "page_elements/elements/#{@element.element_type}_edit", page_element: @page_element %>")
+
+document.querySelector("#element-properties-form").innerHTML = ("<%= j render "page_elements/elements/#{@element.element_type}_form", page: @page, page_element: @page_element %>")

@@ -1,0 +1,3 @@
+<div id=<%= "text-#{dom_id(page_element)}" %> style="<%= text_styles(page_element.properties) %>">
+  <p><%= page_element.properties["text_value"].present? ? page_element.properties["text_value"] : "Text goes here" %></p>
+</div>

@@ -1,0 +1,45 @@
+<%= form_with(model: element) do |form| %>
+  <% if element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(element.errors.count, "error") %> prohibited this element from being saved:</h2>
+
+      <ul>
+        <% element.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :name, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :element_type, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :element_type, class: 'input' %>
+    </div>
+  </div>
+
+  <hr />
+
+  <fieldset>
+    <h4 class="title is-4">Properties:</h4>
+    <%= form.fields_for :element_properties  do |property| %>
+      <%= render "element_property_fields", f: property %>
+    <% end %>
+    <%= link_to_add_fields "Add Property", form, :element_properties %>
+  </fieldset>
+  
+  <hr />
+
+  <div class="field">
+    <div class="control">
+      <%= form.submit 'Save', class: 'button is-link' %>
+    </div>
+  </div>
+<% end %>

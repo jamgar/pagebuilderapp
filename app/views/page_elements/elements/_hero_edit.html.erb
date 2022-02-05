@@ -1,0 +1,19 @@
+<div class="block my-2 is-relative">
+  <div id=<%= "hero-#{dom_id(page_element)}" %> style="<%= hero_styles(page_element.properties) %>">
+    <hgroup>
+      <h1 class="is-size-1"><%= page_element.properties["hero_h1"].present? ? page_element.properties["hero_h1"] : "Hero Title" %></h1>
+      <h3 class="is-size-3"><%= page_element.properties["hero_subtitle"].present? ? page_element.properties["hero_subtitle"] : "Hero Subtitle" %></h3>
+    </hgroup>
+    <% if page_element.properties["cta_url"].present? %>
+      <div style="text-align: center;">
+        <a href="#" class="button is-outlined">Go to</a>
+      </div>
+    <% end %>
+  </div>
+  <% if page_element.persisted? %>
+    <div class="action-buttons has-background-grey-light p-1">
+      <%= link_to 'Edit', edit_page_page_element_path(page_element.page, page_element, element_type: 'hero'), remote: true, class: 'button is-light is-small' %>
+      <%= link_to 'Delete', page_page_element_path(page_element.page, page_element), method: :delete, data: { confirm: "Are you sure?" }, class: 'button is-light is-small' %>
+    </div>
+  <% end %>
+</div>

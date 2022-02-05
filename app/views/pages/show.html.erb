@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @page.name %>
+</h1>
+<hr />
+<div id="page-element-content">
+  <% @page.page_elements.each do |el| %>
+    <%= render "page_elements/elements/#{el.element.element_type}", page_element: el %>
+  <% end %>
+
+<hr />
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

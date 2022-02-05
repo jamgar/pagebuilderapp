@@ -1,0 +1,11 @@
+<div class="block my-2 is-relative">
+  <div id=<%= "text-#{dom_id(page_element)}" %> style="<%= text_styles(page_element.properties) %>">
+    <p><%= page_element.properties["text_value"].present? ? page_element.properties["text_value"] : "Text goes here" %></p>
+  </div>
+  <% if page_element.persisted? %>
+    <div class="action-buttons has-background-grey-light p-1">
+      <%= link_to 'Edit', edit_page_page_element_path(page_element.page, page_element, element_type: 'text'), remote: true, class: 'button is-light is-small' %>
+      <%= link_to 'Delete', page_page_element_path(page_element.page, page_element), method: :delete, data: { confirm: "Are you sure?" }, class: 'button is-light is-small' %>
+    </div>
+  <% end %>
+</div>

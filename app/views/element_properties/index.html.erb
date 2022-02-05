@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Element Properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @element_properties.each do |element_property| %>
+      <tr>
+        <td><%= element_property.element_id %></td>
+        <td><%= element_property.name %></td>
+        <td><%= element_property.type %></td>
+        <td><%= element_property.value %></td>
+        <td><%= link_to 'Show', element_property %></td>
+        <td><%= link_to 'Edit', edit_element_property_path(element_property) %></td>
+        <td><%= link_to 'Destroy', element_property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Element Property', new_element_property_path %>

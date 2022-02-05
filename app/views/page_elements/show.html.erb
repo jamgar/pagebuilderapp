@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @page_element.page_id %>
+</p>
+
+<p>
+  <strong>Element:</strong>
+  <%= @page_element.element_id %>
+</p>
+
+<p>
+  <strong>Properties:</strong>
+  <%= @page_element.properties %>
+</p>
+
+<%= link_to 'Edit', edit_page_element_path(@page_element) %> |
+<%= link_to 'Back', page_elements_path %>

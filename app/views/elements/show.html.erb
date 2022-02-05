@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @element.name %>
+</p>
+<p>
+  <strong>Element Type:</strong>
+  <%= @element.element_type %>
+</p>
+
+<div>
+  <strong>Properties:</strong>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Input Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @element.element_properties.each do |prop|%>
+      <tr>
+        <td><%= prop.name %></td>
+        <td><%= prop.input_type%></td>
+        <td><%= prop.value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to 'Edit', edit_element_path(@element) %> |
+  <%= link_to 'Back', elements_path %>
+</div>

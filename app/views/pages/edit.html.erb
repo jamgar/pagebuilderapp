@@ -1,0 +1,30 @@
+
+<div class="columns">
+  <div class="column is-three-quarters">
+  
+    <h2 class="title is-2">Editing Page</h2>
+
+    <div class="columns is-half">
+      <%= render 'form', page: @page %>
+    </div>
+
+    <%= link_to 'Show', @page %> |
+    <%= link_to 'Back', pages_path %>
+    <hr />
+    <div id="page-element-content">
+      <% @page.page_elements.each do |el| %>
+        <%= render "page_elements/elements/#{el.element.element_type}_edit", page_element: el %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="column">
+    <h3 class="title is-4 mb-2">Elements</h3>
+
+    <% @elements.each do |el| %>
+        <%= link_to el.name, new_page_page_element_path(@page, element_type: el.element_type), remote: true, role: "button", class: "button is-fullwidth is-info mb-2" %>
+    <% end %>
+    <hr />
+    <div id="element-properties-form"></div>
+  </div>
+</div>

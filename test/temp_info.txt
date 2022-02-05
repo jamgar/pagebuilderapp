@@ -1,0 +1,35 @@
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][background_color]', 'Background Color' %>
+    <input type="color" name='page_element[properties][background_color]' id='page_element_properties_background_color' value="<%= page_element['properties']['background_color'].present? ? page_element['properties']['background_color'] : '#ffffff' %>" />
+  </div>
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][text_color]', 'Text Color' %>
+    <input type="color" name='page_element[properties][text_color]' id='page_element_properties_text_color' value="<%= page_element['properties']['text_color'] %>" />
+  </div>
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][padding_top]', 'Padding top (px)' %>
+    <%= text_field_tag 'page_element[properties][padding_top]', page_element['properties']['padding_top'] %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][padding_bottom]', 'Padding bottom (px)' %>
+    <%= text_field_tag 'page_element[properties][padding_bottom]', page_element['properties']['padding_bottom'] %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][padding_left]', 'Padding left (px)' %>
+    <%= text_field_tag 'page_element[properties][padding_left]', page_element['properties']['padding_left'] %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'page_element[properties][padding_right]', 'Padding right (px)' %>
+    <%= text_field_tag 'page_element[properties][padding_right]', page_element['properties']['padding_right'] %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'page_element[properties][cta_url]', 'Button URL' %>
+    <%= text_field_tag 'page_element[properties][cta_url]', page_element['properties']['cta_url'] %>
+  </div>

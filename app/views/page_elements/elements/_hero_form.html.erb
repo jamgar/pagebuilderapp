@@ -1,0 +1,35 @@
+<%= form_with(model: [page, page_element]) do |form| %>
+  <% if page_element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page_element.errors.count, "error") %> prohibited this page_element from being saved:</h2>
+
+      <ul>
+        <% page_element.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= hidden_field_tag :element_type, @element.element_type %>
+
+  <%= form.fields_for :properties, OpenStruct.new(form.object.properties) do |property| %>
+    <% @element.element_properties.each do |ep| %>
+      <div class="field">
+        <%= label_tag ep.name, nil, class: 'label' %>
+        <div class="control">
+        <% if ep.input_type == "color" %>
+          <%= property.color_field ep.name, class: 'input' %>
+        <% else %>
+          <%= property.text_field ep.name, class: 'input' %>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  
+  <div class="field">
+    <div class="control">
+      <%= form.submit 'Save', class: 'button is-link' %>
+    </div>
+  </div>
+<% end %>
