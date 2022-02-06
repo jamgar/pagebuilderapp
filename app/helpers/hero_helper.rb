@@ -9,16 +9,4 @@ module HeroHelper
     styles << "padding-right:" << properties["padding_right"].to_s << "px;"
     styles
   end
-
-  # def hero_input_types
-  #   {
-  #     background_color: { type: "color" },
-  #     text_color: {type: "color" },
-  #     padding_top: {type: "text" },
-  #     padding_bottom: { type: "text" },
-  #     padding_left: { type: "text" },
-  #     padding_right: { type: "text" },
-  #     cta_url: { type: "text" },
-  #   }
-  # end 
 end

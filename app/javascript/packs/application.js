@@ -12,5 +12,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('./addFields')
-require('./removeFields')
+require('./nested-forms/addFields')
+require('./nested-forms/removeFields')
